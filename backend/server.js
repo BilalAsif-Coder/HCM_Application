@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 // API routes
 // API routes
-app.get("/api/health" ,(req,res)=>{res.json({message:"server is runing" , status:true})})
+app.get("/api/health", (req, res) => { res.json({ message: "server is runing", status: true }) })
 app.use("/api/auth", authRoutes);
 app.use("/api/departments", departmentRoutes);
 app.use("/api/employees", employeeRoutes);
@@ -59,9 +59,9 @@ const startServer = async () => {
 
     const PORT = process.env.PORT || 5000;
 
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
+    // app.listen(PORT, () => {
+    //   console.log(`Server running on port ${PORT}`);
+    // });
   } catch (error) {
     console.error("Server startup failed:", error.message);
     process.exit(1);
@@ -69,3 +69,4 @@ const startServer = async () => {
 };
 
 startServer();
+export default app
